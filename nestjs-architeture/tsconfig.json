@@ -1,0 +1,47 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@common/environment": [
+        "libs/environment-config/src"
+      ],
+      "@common/environment/*": [
+        "libs/environment-config/src/*"
+      ],
+      "@common/typeorm": [
+        "libs/typeorm/src"
+      ],
+      "@common/typeorm/*": [
+        "libs/typeorm/src/*"
+      ],
+      "@common/exceptions": [
+        "libs/exceptions/src"
+      ],
+      "@common/exceptions/*": [
+        "libs/exceptions/src/*"
+      ],
+      "@common/logger": [
+        "libs/logger/src"
+      ],
+      "@common/logger/*": [
+        "libs/logger/src/*"
+      ]
+    }
+  }
+}
