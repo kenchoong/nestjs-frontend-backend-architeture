@@ -1,0 +1,15 @@
+FROM node:14.18.0-alpine as builder
+
+WORKDIR /var/www/gateway
+
+COPY package.json yarn.lock tsconfig.build.json tsconfig.json nest-cli.json .prettierrc .eslintrc.js ./
+
+COPY libs libs
+
+COPY apps/gateway apps/gateway 
+
+RUN yarn
+
+RUN  yarn build:gateway
+
+CMD [ "yarn", "start:gateway"]

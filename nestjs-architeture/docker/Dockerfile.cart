@@ -1,0 +1,16 @@
+FROM node:14.18.0-alpine as builder
+
+RUN mkdir -p /var/www/cart
+WORKDIR /var/www/cart
+
+COPY package.json yarn.lock  ./
+COPY libs libs
+COPY apps/cart apps/cart
+RUN yarn
+
+COPY . .
+RUN  yarn build:cart
+
+EXPOSE 4004
+
+CMD [ "yarn", "start:cart"]

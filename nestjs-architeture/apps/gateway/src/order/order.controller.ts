@@ -20,6 +20,11 @@ export class OrderController {
     return 'get order';
   }
 
+  @Get('/:orderId')
+  getOrderById(@Param('orderId') orderId: string): string {
+    return `get order ${orderId}`;
+  }
+
   @Post()
   createOrder(): string {
     return 'create order';

@@ -6,6 +6,7 @@ describe('EnvironmentConfigService', () => {
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
+      imports: [],
       providers: [EnvironmentConfigService],
     }).compile();
 

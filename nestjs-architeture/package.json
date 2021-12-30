@@ -8,6 +8,15 @@
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
+    "build:gateway": "nest build gateway && nest build environment && nest build typeorm && nest build exceptions && nest build logger && nest build app-service-environment-config",
+    "build:product": "nest build product && nest build environment && nest build typeorm && nest build exceptions && nest build logger",
+    "build:cart": "nest build cart && nest build environment && nest build typeorm && nest build exceptions && nest build logger",
+    "build:stripe": "nest build stripe && nest build environment && nest build typeorm && nest build exceptions && nest build logger",
+    "start:gateway": "nest start gateway",
+    "start:product": "nest start product",
+    "start:cart": "nest start cart",
+    "start:stripe": "nest start stripe",
+    "docker:up": "docker-compose up",
     "format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
     "start": "nest start",
     "start:dev": "nest start --watch",
@@ -81,7 +90,8 @@
       "^@common/environment(|/.*)$": "<rootDir>/libs/environment-config/src/$1",
       "^@common/typeorm(|/.*)$": "<rootDir>/libs/typeorm/src/$1",
       "^@common/exceptions(|/.*)$": "<rootDir>/libs/exceptions/src/$1",
-      "^@common/logger(|/.*)$": "<rootDir>/libs/logger/src/$1"
+      "^@common/logger(|/.*)$": "<rootDir>/libs/logger/src/$1",
+      "^@common/app-service-environment-config(|/.*)$": "<rootDir>/libs/app-service-environment-config/src/$1"
     }
   }
 }

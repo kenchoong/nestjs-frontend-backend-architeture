@@ -88,6 +88,15 @@
       "compilerOptions": {
         "tsConfigPath": "apps/order/tsconfig.app.json"
       }
+    },
+    "app-service-environment-config": {
+      "type": "library",
+      "root": "libs/app-service-environment-config",
+      "entryFile": "index",
+      "sourceRoot": "libs/app-service-environment-config/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/app-service-environment-config/tsconfig.lib.json"
+      }
     }
   }
 }

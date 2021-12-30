@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
-import { DatabaseConfig } from 'libs/domain/config/database.interface';
+import { DatabaseConfig } from 'libs/domain/database-config/database.interface';
 
 /**
  *@description: Config service to get environment variable

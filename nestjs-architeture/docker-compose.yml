@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+  # postgress:
+  #   image: imageName
+
+  # pgadmin:
+  #   image: imageName
+
+  gateway:
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile.gateway
+    image: kenchoong012/lavax:gateway
+    restart: always
+    hostname: gateway
+    ports:
+      - '9000:9000'
+    env_file:
+      - .env
+    networks:
+      - backend
+      - frontend
+#   product:
+#     build: Dockerfile.product
+#     image: kenchoong012/lavax:product
+#     restart: always
+#     hostname: product
+#     networks:
+#       - backend
+
+#   order:
+#     build: Dockerfile.order
+#     image: kenchoong012/lavax:order
+#     restart: always
+#     hostname: order
+#     networks:
+#       - backend
+
+#   stripe:
+#     build: Dockerfile.stripe
+#     image: kenchoong012/lavax:stripe
+#     restart: always
+#     hostname: stripe
+#     networks:
+#       - backend
+
+#   cart:
+#     build: Dockerfile.cart
+#     image: kenchoong012/lavax:cart
+#     restart: always
+#     hostname: cart
+#     networks:
+#       - backend
+
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    name: infra

@@ -41,6 +41,24 @@
       ],
       "@common/logger/*": [
         "libs/logger/src/*"
+      ],
+      "@common/app-port-config": [
+        "libs/app-port-config/src"
+      ],
+      "@common/app-port-config/*": [
+        "libs/app-port-config/src/*"
+      ],
+      "@common/app-service-config": [
+        "libs/app-service-config/src"
+      ],
+      "@common/app-service-config/*": [
+        "libs/app-service-config/src/*"
+      ],
+      "@common/app-service-environment-config": [
+        "libs/app-service-environment-config/src"
+      ],
+      "@common/app-service-environment-config/*": [
+        "libs/app-service-environment-config/src/*"
       ]
     }
   }

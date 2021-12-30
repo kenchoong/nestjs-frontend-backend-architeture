@@ -1,0 +1,15 @@
+FROM node:14.18.0-alpine as builder
+
+WORKDIR /
+
+COPY package.json yarn.lock  ./
+COPY libs libs
+COPY apps/product apps/product
+RUN yarn
+
+COPY . .
+RUN  yarn build:product
+
+EXPOSE 4002
+
+CMD [ "yarn", "start:product"]
